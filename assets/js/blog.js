@@ -1,5 +1,4 @@
 // TODO: Create a variable that selects the main element, and a variable that selects the back button element
-const backBtn = document.querySelector('#back');
 const main = document.querySelector('#main-tag');
 
 // TODO: Create a function that builds an element and appends it to the DOM
@@ -35,6 +34,8 @@ function showPosts() {
 
 
 
+
+
 // TODO: Create a function that handles the case where there are no blog posts to display
 function errorDisplay() {
 
@@ -48,7 +49,7 @@ function errorDisplay() {
 function renderBlogList() {
     let renderStoredPosts = readLocalStorage(); 
 
-    if (!renderStoredPosts) {
+    if (renderStoredPosts.length === 0) {
         errorDisplay();
     } else {
         renderStoredPosts.forEach((post, i) => {
@@ -59,9 +60,8 @@ function renderBlogList() {
 }
 
 
-
+renderBlogList();
 
 // TODO: Call the `renderBlogList` function
 
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
-backBtn.addEventListener('click', redirectPage("./index.html"));

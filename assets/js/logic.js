@@ -21,7 +21,20 @@ darkModeButton.addEventListener('click', toggleDarkMode);
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 function readLocalStorage() {
-  return JSON.parse(localStorage.getItem('storedEntries') || []);
+  // let updatedStoredEntries = JSON.parse(localStorage.getItem('storedEntries'));
+
+  // // still seems to not work... getting error 
+  // //"Uncaught TypeError: Cannot read properties of null (reading 'length') 
+  // //    at readLocalStorage (logic.js:27:28) 
+  // //    at HTMLButtonElement.handleFormSubmission (form.js:11:24)" "
+  // if (!updatedStoredEntries) {
+  //   updatedStoredEntries = [];
+  //   return updatedStoredEntries;
+  // } else {
+  //   return updatedStoredEntries;
+  // }
+
+  return JSON.parse(localStorage.getItem('storedEntries')) || [];
 }
 
 
@@ -29,18 +42,9 @@ function readLocalStorage() {
 
 
 // TODO: Create a function called `storeLocalStorage` that takes a given object and saves the new data to the existing blog data in local storage.
-function storeLocalStorage(obj) {
+function storeLocalStorage(newBlogObject) {
+  // can't tell if this is working... 
     let entriesArray = readLocalStorage();
-
-    const usernameInput = document.querySelector('#username').value;
-    const titleInput = document.querySelector('#title').value;
-    const contentInput = document.querySelector('#content').value;
-
-    const newBlogObject = {
-        username: usernameInput,
-        title: titleInput,
-        content: contentInput
-    }
 
     entriesArray.push(newBlogObject);
 

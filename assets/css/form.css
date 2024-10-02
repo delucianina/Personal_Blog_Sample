@@ -88,12 +88,17 @@ section {
   border-left: solid .5rem var(--disabled);
 }
 
+.hide {
+  display: none;
+}
+
 /*
   IDs
 */
 #error {
   color: var(--error);
   opacity: .75;
-  position: absolute;
+  /* position: absolute; */
   bottom: -2rem;
+  text-align: center;
 }
