@@ -7,8 +7,6 @@ function handleFormSubmission(event) {
 
     event.preventDefault();
 
-    console.log('test');
-
     //1: Grab form data and store it in local storage
     const username = document.querySelector('#username').value;
     const title = document.querySelector('#title').value;
@@ -18,7 +16,6 @@ function handleFormSubmission(event) {
 
     if (!username || !title || !content) {
         errorEl.textContent = 'Please complete the form.';
-        // errorEl.classList.remove('hide');
         return;
     }
     
