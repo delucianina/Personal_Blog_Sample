@@ -1,11 +1,13 @@
 const form = document.querySelector('#form-identifier');
-const submitBtn = document.querySelector('#submit');
 
+console.log('test2');
 
 // TODO: Create a function that handles the form submission. 
 function handleFormSubmission(event) {
 
     event.preventDefault();
+
+    console.log('test');
 
     //1: Grab form data and store it in local storage
     const username = document.querySelector('#username').value;
@@ -17,9 +19,6 @@ function handleFormSubmission(event) {
     if (!username || !title || !content) {
         errorEl.textContent = 'Please complete the form.';
         // errorEl.classList.remove('hide');
-        setTimeout(() => {
-            errorEl.textContent = '';
-        }, 3000)
         return;
     }
     
@@ -37,4 +36,4 @@ function handleFormSubmission(event) {
 
 
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
-submitBtn.addEventListener('click', handleFormSubmission);
+form.addEventListener('submit', handleFormSubmission);

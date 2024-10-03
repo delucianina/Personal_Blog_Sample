@@ -6,9 +6,11 @@ function toggleDarkMode() {
     if (!mode || mode === 'light') {
       document.body.classList.add('dark');
       localStorage.setItem('mode', 'dark');
+      document.documentElement.style.setProperty('--circle-color', '#eee');
     } else {
       document.body.classList.remove('dark');
       localStorage.setItem('mode', 'light');
+      document.documentElement.style.setProperty('--circle-color', '#555');
     }
   
   }
